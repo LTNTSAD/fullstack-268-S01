@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-letbooks = [
+let books = [
     {
         id: 1,
         title: 'Books 1',
@@ -56,8 +56,7 @@ app.delete('/books/:id', (req,res)=>{
     const index = books.indexOf(book);
     books.splice(index,1);
     res.send(book);
-})
+});
 
 const port = process.env.PORT || 3000;
-app.listen(port,() => console.log('Listening on port ${port}...'));
-
+app.listen(port,() => console.log(`Listening on port ${port}`));
