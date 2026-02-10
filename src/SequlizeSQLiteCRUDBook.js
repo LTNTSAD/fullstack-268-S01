@@ -2,6 +2,9 @@ const express = require('express');
 const Sequelize = require('sequelize');
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Hello World! book");
+});
 app.use(express.json());
 
 const sequelize = new Sequelize('database', 'username', 'password', {
@@ -73,5 +76,5 @@ app.delete('/books/:id', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on http://localhost:${port}...`));
